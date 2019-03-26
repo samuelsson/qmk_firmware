@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |---------|  |-------------------------------------------------------------| ,----.
    * |    |    |  |    |   |   |   |   |   |   |End|Mut|V- |V+ |   |TG(SETTINGS)| |    |
    * |---------|  |-------------------------------------------------------------------------.
-   * |    |    |  |    |    |    |                       |    |    |     |   |    |    |    |
+   * |    |    |  |    |    |    |                       |    |    |     |   |Prev|Play|Next|
    * `---------'  `------------------------------------------------------'   `--------------'
    */
   [MFUN] = LAYOUT_iso(
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX,          _______, KC_PGDN, \
     _______, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, XXXXXXX,                                     \
     _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_END,  KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX,          TG(SETTINGS),     _______,          \
-    _______, _______, _______, _______, _______,                            _______,                            _______, _______, _______,          _______, _______, _______  \
+    _______, _______, _______, _______, _______,                            _______,                            _______, _______, _______,          KC_MRWD, KC_MPLY, KC_MFFD  \
   ),
 
   /* Keymap WIN: (Second Base Layer) Default Layer for Windows
@@ -96,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |---------|  |-------------------------------------------------------------| ,----.
    * |    |    |  |    |   |   |   |   |   |   |End|Mut|V- |V+ |   |TG(SETTINGS)| |    |
    * |---------|  |-------------------------------------------------------------------------.
-   * |    |    |  |    |    |    |                       |    |    |     |   |    |    |    |
+   * |    |    |  |    |    |    |                       |    |    |     |   |Prev|Play|Next|
    * `---------'  `------------------------------------------------------'   `--------------'
    */
   [WFUN] = LAYOUT_iso(
@@ -104,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX,          _______, KC_PGDN, \
     _______, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, XXXXXXX,                                     \
     _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_END,  KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX,          TG(SETTINGS),     _______,          \
-    _______, _______, _______, _______, _______,                            _______,                            _______, _______, _______,          _______, _______, _______  \
+    _______, _______, _______, _______, _______,                            _______,                            _______, _______, _______,          KC_MPRV, KC_MPLY, KC_MNXT  \
   ),
 
   /* Keymap SETTINGS: Settings Layer
