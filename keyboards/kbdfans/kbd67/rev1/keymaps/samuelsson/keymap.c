@@ -10,11 +10,11 @@ enum keymap_layout {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* Keymap Mac (Base) Layer
    * ,---------------------------------------------------------------.
-   * |Esc| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | + | ´ |Backsp |Del|
+   * |Esc| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | + | ´ |Backsp |PgU|
    * |---------------------------------------------------------------|
-   * | Tab | Q | W | E | R | T | Y | U | I | O | P | Å | ¨ |     |PgU|
+   * | Tab | Q | W | E | R | T | Y | U | I | O | P | Å | ¨ |     |PgD|
    * |------------------------------------------------------.    |---|
-   * | Func | A | S | D | F | G | H | J | K | L | Ö | Ä | ' |Ret |PgD|
+   * | Func | A | S | D | F | G | H | J | K | L | Ö | Ä | ' |Ret |Del|
    * |---------------------------------------------------------------|
    * |Shft| < | Z | X | C | V | B | N | M | , | . | - |Shift |Up |Fn |
    * |---------------------------------------------------------------|
@@ -22,20 +22,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-------------------------------------------------' `-----------'
    */
   [MAC] = LAYOUT_65_iso(
-    KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC, KC_DEL,  \
-    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC,          KC_PGUP, \
-    MO(MFN), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT,  KC_PGDN, \
+    KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC, KC_PGUP, \
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC,          KC_PGDN, \
+    MO(MFN), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT,  KC_DEL,  \
     KC_LSFT, KC_NUBS, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_UP,   MO(MFN), \
     KC_LCTL, KC_LALT, KC_LGUI,                   KC_SPC,                             KC_RGUI, KC_RALT,          KC_LEFT, KC_DOWN, KC_RGHT  \
   ),
 
   /* Keymap Mac Fn Layer
    * ,---------------------------------------------------------------.
-   * | § |F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Delete |Rst|
+   * | § |F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Delete |Hom|
    * |---------------------------------------------------------------|
-   * |Caps |   |Up |   |   |   |   |PgU|Up |PgD|   |   |   |     |Hom|
+   * |Caps |   |Up |   |   |   |   |PgU|Up |PgD|   |   |   |     |End|
    * |------------------------------------------------------.    |---|
-   * |      |Lft|Dwn|Rig|   |   |Hom|Lft|Dwn|Rig|   |   |   |    |End|
+   * |      |Lft|Dwn|Rig|   |   |Hom|Lft|Dwn|Rig|   |   |Rst|    |Ins|
    * |---------------------------------------------------------------|
    * |    |   |   |   |   |   |   |End|Mut|V- |V+ |   |      |WIN|   |
    * |---------------------------------------------------------------|
@@ -43,20 +43,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-------------------------------------------------' `-----------'
    */
   [MFN] = LAYOUT_65_iso(
-    KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,  KC_INS,  \
-    KC_CAPS, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, XXXXXXX, XXXXXXX, XXXXXXX,          KC_HOME, \
-    _______, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, RESET,   XXXXXXX, KC_END,  \
+    KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,  KC_HOME, \
+    KC_CAPS, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, XXXXXXX, XXXXXXX, XXXXXXX,          KC_END,  \
+    _______, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, RESET,   XXXXXXX, KC_INS,  \
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_END,  KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX, _______, DF(WIN), _______, \
     _______, _______, _______,                   _______,                            _______, _______,          KC_MRWD, KC_MPLY, KC_MFFD  \
   ),
 
   /* Keymap Windows Layer
    * ,---------------------------------------------------------------.
-   * |Esc| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | + | ´ |Backsp |Del|
+   * |Esc| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | + | ´ |Backsp |PgU|
    * |---------------------------------------------------------------|
-   * | Tab | Q | W | E | R | T | Y | U | I | O | P | Å | ¨ |     |PgU|
+   * | Tab | Q | W | E | R | T | Y | U | I | O | P | Å | ¨ |     |PgD|
    * |------------------------------------------------------.    |---|
-   * | Func | A | S | D | F | G | H | J | K | L | Ö | Ä | ' |Ent |PgD|
+   * | Func | A | S | D | F | G | H | J | K | L | Ö | Ä | ' |Ent |Del|
    * |---------------------------------------------------------------|
    * |Shft| < | Z | X | C | V | B | N | M | , | . | - |Shift |Up |Fn |
    * |---------------------------------------------------------------|
@@ -64,20 +64,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-------------------------------------------------' `-----------'
    */
   [WIN] = LAYOUT_65_iso(
-    KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC, KC_DEL,  \
-    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC,          KC_PGUP, \
-    MO(WFN), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT,  KC_PGDN, \
+    KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC, KC_PGUP, \
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC,          KC_PGDN, \
+    MO(WFN), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT,  KC_DEL,  \
     KC_LSFT, KC_NUBS, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_UP,   MO(WFN), \
     KC_LCTL, KC_LGUI, KC_LALT,                   KC_SPC,                             KC_RALT, KC_RCTL,          KC_LEFT, KC_DOWN, KC_RGHT  \
   ),
 
   /* Keymap Windows Fn Layer
    * ,---------------------------------------------------------------.
-   * | § |F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Delete |Rst|
+   * | § |F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Delete |Hom|
    * |---------------------------------------------------------------|
-   * |Caps |   |Up |   |   |   |   |PgU|Up |PgD|   |   |   |     |Hom|
+   * |Caps |   |Up |   |   |   |   |PgU|Up |PgD|   |   |   |     |End|
    * |------------------------------------------------------.    |---|
-   * |      |Lft|Dwn|Rig|   |   |Hom|Lft|Dwn|Rig|   |   |   |    |End|
+   * |      |Lft|Dwn|Rig|   |   |Hom|Lft|Dwn|Rig|   |   |Rst|    |Ins|
    * |---------------------------------------------------------------|
    * |    |   |   |   |   |   |   |End|Mut|V- |V+ |   |      |MAC|   |
    * |---------------------------------------------------------------|
@@ -85,9 +85,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-------------------------------------------------' `-----------'
    */
   [WFN] = LAYOUT_65_iso(
-    KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,  KC_INS, \
-    KC_CAPS, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, XXXXXXX, XXXXXXX, XXXXXXX,          KC_HOME, \
-    _______, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, RESET,   XXXXXXX, KC_END,  \
+    KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,  KC_HOME, \
+    KC_CAPS, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, XXXXXXX, XXXXXXX, XXXXXXX,          KC_END,  \
+    _______, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, RESET,   XXXXXXX, KC_INS,  \
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_END,  KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX, _______, DF(MAC), _______, \
     _______, _______, _______,                   _______,                            _______, _______,          KC_MPRV, KC_MPLY, KC_MNXT  \
   ),
